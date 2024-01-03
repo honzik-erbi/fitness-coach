@@ -17,6 +17,7 @@ import { Link } from "react-router-dom";
 export const ListItems = (props: any): JSX.Element => {
   return (
     <React.Fragment>
+      <Link to="/notes" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -27,6 +28,7 @@ export const ListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Notes" />
       </ListItemButton>
+      </Link>
       <ListItemButton selected>
         <ListItemIcon>
           <img
@@ -37,6 +39,7 @@ export const ListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Timetable" />
       </ListItemButton>
+      <Link to="/exercises" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -47,6 +50,8 @@ export const ListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Exercises" />
       </ListItemButton>
+      </Link>
+      <Link to="/dishes" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -57,6 +62,8 @@ export const ListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Dishes" />
       </ListItemButton>
+      </Link>
+      <Link to="/programs" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -67,6 +74,7 @@ export const ListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Programs" />
       </ListItemButton>
+      </Link>
     </React.Fragment>
   );
 };
@@ -74,6 +82,7 @@ export const ListItems = (props: any): JSX.Element => {
 export const SecondaryListItems = (props: any): JSX.Element => {
   return (
     <React.Fragment>
+      <Link to="/stats" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -83,6 +92,8 @@ export const SecondaryListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Stats" />
       </ListItemButton>
+      </Link>
+      <Link to="/friends" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -92,6 +103,8 @@ export const SecondaryListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Friends" />
       </ListItemButton>
+      </Link>
+      <Link to="/notifications" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -101,6 +114,7 @@ export const SecondaryListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Notificatons" />
       </ListItemButton>
+      </Link>
     </React.Fragment>
   );
 };
@@ -108,6 +122,7 @@ export const SecondaryListItems = (props: any): JSX.Element => {
 export const BottomListItems = (props: any): JSX.Element => {
   return (
     <React.Fragment>
+      <Link to="/settings" style={{textDecoration:"none", color: "black"}}>
       <ListItemButton>
         <ListItemIcon>
           <img
@@ -118,6 +133,7 @@ export const BottomListItems = (props: any): JSX.Element => {
         </ListItemIcon>
         <ListItemText primary="Settings" />
       </ListItemButton>
+      </Link>
       <Link style={{textDecoration : "none", color : "red"}} to={"/"}>
         <ListItemButton>
           <ListItemIcon>
