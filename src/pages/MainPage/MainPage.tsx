@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export function MainPage() {
   return (
     <>
-      <h1>HOnza ma malej pindik</h1>
+      <h1></h1>
       <Grid container spacing={2} flexDirection={"column"}>
         <Grid item>
           <Link to={"/dashboard"}>Dash</Link>
