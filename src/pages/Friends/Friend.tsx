@@ -7,7 +7,7 @@ export default function Friend() {
         <p>Friend</p>
         <p>Profilovka</p>
         <p>Jmeno</p>
-        <p>Badges</p>
+        <p>Achievements</p>
         <p>banner</p>
         <p>status</p>
         <p>status - kratke slovo - info</p>

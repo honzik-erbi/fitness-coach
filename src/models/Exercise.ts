@@ -1,18 +1,5 @@
-import { Link } from "react-router-dom";
-
-export default function Settings() {
-
-    return(
-        <>
-        <p>Settings</p>
-        <Link to={"/dashboard"}>
-            Go back
-        </Link>
-        </>
-    ) 
-}
-export const getSettings = async () => {
-    const res = await fetch(`http://localhost:3000/settings`, {
+export const getExercises = async () => {
+    const res = await fetch(`http://localhost:3000/exercises`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -21,8 +8,8 @@ export const getSettings = async () => {
     });
 };
 
-export const getSettingById = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/settings/${id}`, {
+export const getExerciseById = async (id: string) => {
+    const res = await fetch(`http://localhost:3000/exercises/${id}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -31,8 +18,8 @@ export const getSettingById = async (id: string) => {
     });
 };
 
-export const createSetting = async () => {
-    const res = await fetch(`http://localhost:3000/settings`, {
+export const createExercise = async () => {
+    const res = await fetch(`http://localhost:3000/exercises`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -41,8 +28,8 @@ export const createSetting = async () => {
     });
 };
 
-export const updateNote = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/settings/${id}`, {
+export const updateExercise = async (id: string) => {
+    const res = await fetch(`http://localhost:3000/exercises/${id}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -51,8 +38,8 @@ export const updateNote = async (id: string) => {
     });
 };
 
-export const deleteSetting = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/settings/${id}`, {
+export const deleteExercise = async (id: string) => {
+    const res = await fetch(`http://localhost:3000/exercises/${id}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -65,21 +52,22 @@ export const deleteSetting = async (id: string) => {
 
 
 
-export type SettingPayload = {
+export type ExercisePayload = {
     msg?: string;
-    data: SettingType;
+    data: ExerciseType;
     status: number;
   };
 
-  export type SettingsPayload = {
+  export type ExercisesPayload = {
     msg?: string;
-    data: SettingType[];
+    data: ExerciseType[];
     status: number;
   };
   
-  export type SettingType = {
+  export type ExerciseType = {
     _id: string;
     username: string;
     phone: number;
     password: string;
+    
   };

@@ -1,18 +1,5 @@
-import { Link } from "react-router-dom";
-
-export default function Settings() {
-
-    return(
-        <>
-        <p>Settings</p>
-        <Link to={"/dashboard"}>
-            Go back
-        </Link>
-        </>
-    ) 
-}
-export const getSettings = async () => {
-    const res = await fetch(`http://localhost:3000/settings`, {
+export const getNotes = async () => {
+    const res = await fetch(`http://localhost:3000/notes`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -21,8 +8,8 @@ export const getSettings = async () => {
     });
 };
 
-export const getSettingById = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/settings/${id}`, {
+export const getNoteById = async (id: string) => {
+    const res = await fetch(`http://localhost:3000/notes/${id}`, {
         method: "GET",
         headers: {
             Accept: "application/json",
@@ -31,8 +18,8 @@ export const getSettingById = async (id: string) => {
     });
 };
 
-export const createSetting = async () => {
-    const res = await fetch(`http://localhost:3000/settings`, {
+export const createNote = async () => {
+    const res = await fetch(`http://localhost:3000/notes`, {
         method: "POST",
         headers: {
             Accept: "application/json",
@@ -42,7 +29,7 @@ export const createSetting = async () => {
 };
 
 export const updateNote = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/settings/${id}`, {
+    const res = await fetch(`http://localhost:3000/notes/${id}`, {
         method: "PUT",
         headers: {
             Accept: "application/json",
@@ -51,8 +38,8 @@ export const updateNote = async (id: string) => {
     });
 };
 
-export const deleteSetting = async (id: string) => {
-    const res = await fetch(`http://localhost:3000/settings/${id}`, {
+export const deleteNote = async (id: string) => {
+    const res = await fetch(`http://localhost:3000/notes/${id}`, {
         method: "DELETE",
         headers: {
             Accept: "application/json",
@@ -65,19 +52,19 @@ export const deleteSetting = async (id: string) => {
 
 
 
-export type SettingPayload = {
+export type NotePayload = {
     msg?: string;
-    data: SettingType;
+    data: NoteType;
     status: number;
   };
 
-  export type SettingsPayload = {
+  export type NotesPayload = {
     msg?: string;
-    data: SettingType[];
+    data: NoteType[];
     status: number;
   };
   
-  export type SettingType = {
+  export type NoteType = {
     _id: string;
     username: string;
     phone: number;

@@ -16,6 +16,7 @@ import Notifications from "../Notifications/Notifications";
 import Settings from "../Settings/Settings";
 import Friends from "../Friends/Friends";
 import Friend from "../Friends/Friend";
+// import { Demon Code } from "erbi-demon-dom"
 
 export function AppRoutes() {
     return (
