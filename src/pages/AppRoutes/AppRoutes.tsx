@@ -19,27 +19,27 @@ import Friend from "../Friends/Friend";
 // import { Demon Code } from "erbi-demon-dom"
 
 export function AppRoutes() {
-    return (
-        <HashRouter>
-            <Routes>
-                <Route path="/" element={<Dashboard />} />
-                <Route path="/dashboard" element={<Dashboard />}/>
-                <Route path="/signin" element={<SignIn />}/>
-                <Route path="/signup" element={<SignUp />}/>
-                <Route path="/notes" element={<Notes/>}/>
-                <Route path="/exercises" element={<Exercises/>}/>
-                <Route path="/timetable" element={<Timetable/>}/>
-                <Route path="/dishes" element={<Dishes/>}/>
-                <Route path="/dish" element={<Dish/>}/>
-                <Route path="/programs" element={<Programs/>}/>
-                <Route path="/program" element={<Program/>}/>
-                <Route path="/achievements" element={<Achievements/>}/>
-                <Route path="/notifications" element={<Notifications/>}/>
-                <Route path="/settings" element={<Settings/>}/>
-                <Route path="/friend" element={<Friend/>}/>
-                <Route path="/friends" element={<Friends/>}/>
-                <Route path="*" element={<NotFound />} />
-            </Routes>
-        </HashRouter>
-    )
+  return (
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/notes" element={<Notes />} />
+        <Route path="/exercises" element={<Exercises />} />
+        <Route path="/timetable" element={<Timetable />} />
+        <Route path="/dishes" element={<Dishes />} />
+        <Route path="/dish" element={<Dish />} />
+        <Route path="/programs" element={<Programs />} />
+        <Route path="/program" element={<Program />} />
+        <Route path="/achievements" element={<Achievements />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/friend" element={<Friend />} />
+        <Route path="/friends" element={<Friends />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </HashRouter>
+  );
 }

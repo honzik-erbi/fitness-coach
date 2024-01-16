@@ -1,5 +1,5 @@
-export const getNotes = async () => {
-  const res = await fetch(`http://localhost:3000/notes`, {
+export const getDishes = async () => {
+  const res = await fetch(`http://localhost:3000/dishes`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -7,11 +7,11 @@ export const getNotes = async () => {
     },
   });
   const data = await res.json();
-  return createNotesPayload(res, data);
+  return createDishesPayload(res, data);
 };
 
-export const getNoteById = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/notes/${id}`, {
+export const getDishById = async (id: string) => {
+  const res = await fetch(`http://localhost:3000/dishes/${id}`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -19,11 +19,11 @@ export const getNoteById = async (id: string) => {
     },
   });
   const data = await res.json();
-  return createNotePayload(res, data);
+  return createDishPayload(res, data);
 };
 
-export const createNote = async () => {
-  const res = await fetch(`http://localhost:3000/notes`, {
+export const createDish = async () => {
+  const res = await fetch(`http://localhost:3000/dishes`, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -31,11 +31,11 @@ export const createNote = async () => {
     },
   });
   const data = await res.json();
-  return createNotePayload(res, data);
+  return createDishPayload(res, data);
 };
 
-export const updateNote = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/notes/${id}`, {
+export const updateDish = async (id: string) => {
+  const res = await fetch(`http://localhost:3000/dishes/${id}`, {
     method: "PUT",
     headers: {
       Accept: "application/json",
@@ -43,11 +43,11 @@ export const updateNote = async (id: string) => {
     },
   });
   const data = await res.json();
-  return createNotePayload(res, data);
+  return createDishPayload(res, data);
 };
 
-export const deleteNote = async (id: string) => {
-  const res = await fetch(`http://localhost:3000/notes/${id}`, {
+export const deleteDish = async (id: string) => {
+  const res = await fetch(`http://localhost:3000/dishes/${id}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -55,17 +55,17 @@ export const deleteNote = async (id: string) => {
     },
   });
   const data = await res.json();
-  return createNotePayload(res, data);
+  return createDishPayload(res, data);
 };
 
-const createNotePayload = (res: Response, data: any): NotePayload => {
+const createDishPayload = (res: Response, data: any): DishPayload => {
   return {
     msg: data.msg,
     data: data.payload,
     status: res.status,
   };
 };
-const createNotesPayload = (res: Response, data: any): NotesPayload => {
+const createDishesPayload = (res: Response, data: any): DishesPayload => {
   return {
     msg: data.msg,
     data: data.payload,
@@ -73,18 +73,20 @@ const createNotesPayload = (res: Response, data: any): NotesPayload => {
   };
 };
 
-export type NotePayload = {
+export type DishPayload = {
   msg?: string;
-  data: NoteType;
+  data: DishType;
   status: number;
 };
 
-export type NotesPayload = {
+export type DishesPayload = {
   msg?: string;
-  data: NoteType[];
+  data: DishType[];
   status: number;
 };
 
-export type NoteType = {
+export type DishType = {
   _id: string;
+  name: string;
+  image: string;
 };

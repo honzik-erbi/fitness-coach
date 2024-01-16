@@ -71,7 +71,7 @@ const Drawer = styled(MuiDrawer, {
   "& .MuiDrawer-paper": {
     position: "relative",
     whiteSpace: "nowrap",
-    backgroundColor : "#F2F2F2",
+    backgroundColor: "#F2F2F2",
     width: drawerWidth,
     transition: theme.transitions.create("width", {
       easing: theme.transitions.easing.sharp,
@@ -228,8 +228,8 @@ export default function Dashboard() {
               <Grid item xs={3} alignItems={"center"}>
                 <ListItems open={open} />
                 <Divider
-                  variant={ open ? "middle" : "fullWidth"}
-                  sx={{ my: 2, color: "#333333", backgroundColor: "#333333"}}
+                  variant={open ? "middle" : "fullWidth"}
+                  sx={{ my: 2, color: "#333333", backgroundColor: "#333333" }}
                 />
                 <SecondaryListItems open={open} />
               </Grid>

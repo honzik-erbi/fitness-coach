@@ -10,10 +10,10 @@ export function MainPage() {
           <Link to={"/dashboard"}>Dash</Link>
         </Grid>
         <Grid item>
-        <Link to={"/signin"}>Signin</Link>
+          <Link to={"/signin"}>Signin</Link>
         </Grid>
         <Grid item>
-        <Link to={"/signup"}>Dash</Link>
+          <Link to={"/signup"}>Dash</Link>
         </Grid>
       </Grid>
     </>
