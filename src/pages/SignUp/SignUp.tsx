@@ -12,6 +12,8 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { signUp } from "../../models/User";
+import { useState } from "react";
 
 function Copyright(props: any) {
   return (
@@ -34,14 +36,24 @@ function Copyright(props: any) {
 // TODO remove, this demo shouldn't need to reset the theme.
 const defaultTheme = createTheme();
 
+
 export default function SignUp() {
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const [info, setInfo] = useState();
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get("email"),
-      password: data.get("password"),
+    const user = await signUp({
+      firstname: data.get("firstname") as string,
+      lastname: data.get("lastname") as string,
+      email: data.get("email") as string,
+      password: data.get("password") as string,
     });
+    if (user.status == 201) {
+      //redirect
+      return;
+    }
+    setInfo(user.msg);
   };
 
   return (
@@ -72,10 +84,10 @@ export default function SignUp() {
               <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
-                  name="firstName"
+                  name="firstname"
                   required
                   fullWidth
-                  id="firstName"
+                  id="firstname"
                   label="First Name"
                   autoFocus
                 />
@@ -84,9 +96,9 @@ export default function SignUp() {
                 <TextField
                   required
                   fullWidth
-                  id="lastName"
-                  label="Last Name"
-                  name="lastName"
+                  id="lastname"
+                  label="Last name"
+                  name="lastname"
                   autoComplete="family-name"
                 />
               </Grid>

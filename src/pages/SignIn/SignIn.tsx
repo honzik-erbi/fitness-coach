@@ -12,6 +12,7 @@ import Grid from "@mui/material/Grid";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Link as LinkReact } from "react-router-dom";
 
 function Copyright(props: any) {
   return (
@@ -126,9 +127,9 @@ export default function SignIn() {
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
+                  <LinkReact to={'/signup'}>
                     {"Don't have an account? Sign Up"}
-                  </Link>
+                  </LinkReact>
                 </Grid>
               </Grid>
               <Copyright sx={{ mt: 5 }} />
